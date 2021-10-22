@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlacementIndicator : MonoBehaviour
 {
 
     public GameObject UIArrows;
     public GameObject Loading;
+    //public Text textFieldW;
 
     // public GameObject arObjectToSpawn;
     public GameObject placementIndicator;
@@ -40,8 +42,6 @@ public class PlacementIndicator : MonoBehaviour
 
         UpdatePlacementPose();
         UpdatePlacementIndicator();
-
-
     }
     void UpdatePlacementIndicator()
     {
@@ -80,6 +80,7 @@ public class PlacementIndicator : MonoBehaviour
                 Destroy(clearUp);
                 spawnedObject = Instantiate(arModels[i], PlacementPose.position, PlacementPose.rotation);
             }
+            //textFieldW.text = "Width: " + (arModels[i].transform.localScale.x / 2) + "\nHeight: " + (arModels[i].transform.localScale.y / 2);
         }
 
 
